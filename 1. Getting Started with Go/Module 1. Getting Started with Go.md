@@ -605,21 +605,6 @@ The **type** determines:
     
 
 ---
-
-Would you like to continue with:
-
-1. **Short variable declarations** (`:=`)
-    
-2. **Default zero values**
-    
-3. **Constants and type inference**
-    
-4. **Pointers in Go**
-    
-5. Or some **hands-on exercises** to test what you learned?
-    
-
----
 ### 🔷 1. **Variables Must Have a Type**
 
 - Every variable in Go has a type.
