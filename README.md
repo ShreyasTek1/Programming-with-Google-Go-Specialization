@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 ![Go Logo](https://miro.medium.com/v2/resize:fit:1400/1*6r9hjoU1hqio5xg7m2B1-g.png)
 ### ✅ **Step-by-Step: Installing Go on Windows**
 
@@ -78,7 +76,3 @@ On [https://go.dev/play](https://go.dev/play/), there's a **yellow box** where y
 But this is just for testing — you'll use **your local installation** for full development.
 
 ---
-=======
-# Programming-with-Google-Go-Specialization
-Course notes and code snippets for the Coursera course: Programming with Google Go by University of California, Irvine
->>>>>>> 754a60e63c3ba8af7b5607b22e066ef1c7e03613
