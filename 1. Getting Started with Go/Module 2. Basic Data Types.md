@@ -6,7 +6,7 @@ In Go, you use:
 
 - `&` (ampersand) to get the address of a variable
     
-- `*`(star) to **dereference** (i.e., access the value at) a pointer
+- `*` (star) to **dereference** (i.e., access the value at) a pointer
     
 
 ---
@@ -64,9 +64,11 @@ import "fmt"
 func main() {
     ptr := new(int)     // ptr is a pointer to a newly allocated int (default value 0)
     fmt.Println(*ptr)   // Output: 0
+    fmt.Println(ptr)
 
     *ptr = 3            // set the value at that address to 3
     fmt.Println(*ptr)   // Output: 3
+    fmt.Println(ptr)
 }
 ```
 
@@ -83,12 +85,12 @@ func main() {
 
 ### 🧩 Summary:
 
-|Concept|Explanation|
-|---|---|
-|`*int`|Type: Pointer to an integer|
-|`&x`|Gives you the address of `x`|
-|`*ptr`|Dereferences the pointer, gives the value at that address|
-|`new(int)`|Allocates memory for an `int`, returns pointer to it|
+| Concept    | Explanation                                               |
+| ---------- | --------------------------------------------------------- |
+| `*int`     | **Type:** Pointer to an integer                           |
+| `&x`       | Gives you the address of `x`                              |
+| `*ptr`     | Dereferences the pointer, gives the value at that address |
+| `new(int)` | Allocates memory for an `int`, returns pointer to it      |
 
 ---
 ## 🧠 What Is Variable Scope?
@@ -224,9 +226,7 @@ File Block (b1)
     
 
 ---
-### 🔑 **Key Concepts Explained Simply**
-
-#### 1. **Memory Allocation and Deallocation**
+## 1. **Memory Allocation and Deallocation**
 
 - When you create a variable, it needs **space in memory**.
     
@@ -538,6 +538,7 @@ var x int // Compiler decides bit size (32 or 64 depending on system)
     
 
 > Use fixed-size integers when you want **exact control** over memory or range.
+> Use `int` (generic integer) unless you have a specific size requirement.
 
 ---
 
@@ -564,7 +565,7 @@ var x int // Compiler decides bit size (32 or 64 depending on system)
 <=  // less than or equal
 ```
 
-### ✅ **Boolean Operators**
+### ✅ **Boolean or Logical Operators**
 
 ```go
 &&  // logical AND
@@ -595,70 +596,7 @@ var x int // Compiler decides bit size (32 or 64 depending on system)
 |Operators|`+`, `-`, `==`, `&&`, `<<`, etc.|Common across most programming languages|
 
 ---
-## 📝 1. Comments in Go
-
-- **Single-line Comment**:
-    
-    ```go
-    // This is a comment
-    var x int // Variable declaration with inline comment
-    ```
-    
-- **Multi-line (Block) Comment**:
-    
-    ```go
-    /*
-       This is a multi-line comment.
-       It can span multiple lines.
-    */
-    ```
-    
-- ✅ Comments are ignored by the compiler and are for humans to understand the code better.
-    
-
----
-
-## 📤 2. Print Statements (Using the `fmt` Package)
-
-To use print functions:
-
-```go
-import "fmt"
-```
-
-### Printing Text:
-
-```go
-fmt.Println("Hello, World!")
-```
-
-### Concatenating Strings:
-
-```go
-x := "Joe"
-fmt.Println("Hi " + x) // Prints: Hi Joe
-```
-
-### Using Format Strings (`Printf` with format specifiers):
-
-```go
-fmt.Printf("Hi %s\n", x) // %s for string
-```
-
-Common format specifiers:
-
-- `%s` → string
-    
-- `%d` → decimal integer
-    
-- `%f` → floating point
-    
-- `%v` → default format (any value)
-    
-
----
-
-## 🔁 3. Type Conversion
+## 🔁 5. Type Conversion
 
 ### ✅ Valid Conversion (example: `int16` to `int32`):
 
@@ -680,55 +618,6 @@ x = y // Error! Different types: int32 ≠ int16
 > Not all type conversions are allowed. Some will cause compiler errors if not logically valid.
 
 ---
-
-## 🔢 4. Integer Types
-
-### Signed Integers:
-
-- `int8` → -128 to 127
-    
-- `int16` → -32,768 to 32,767
-    
-- `int32` → -2B to 2B
-    
-- `int64` → Very large
-    
-
-### Unsigned Integers:
-
-- `uint8` (same as `byte`) → 0 to 255
-    
-- `uint16`, `uint32`, `uint64` → progressively larger ranges
-    
-
-Use `int` (generic integer) unless you have a specific size requirement.
-
----
-
-## 🧮 5. Operators in Go
-
-### Arithmetic:
-
-- `+`, `-`, `*`, `/`, `%` (modulo)
-    
-
-### Comparison:
-
-- `==`, `!=`, `<`, `>`, `<=`, `>=`
-    
-
-### Logical:
-
-- `&&` (AND), `||` (OR), `!` (NOT)
-    
-
-### Bitwise:
-
-- `&`, `|`, `^`, `&^`, `<<`, `>>`
-    
-
----
-
 ## 🌊 6. Floating Point Numbers
 
 - `float32` → ~6 decimal digits precision
@@ -799,15 +688,15 @@ fmt.Printf("%c\n", s[0]) // Output: A
 
 ## ✅ Summary
 
-|Topic|Key Takeaway|
-|---|---|
-|Comments|Use `//` or `/* */` for readability|
-|Print Statements|Use `fmt` package with `Println`, `Printf`, etc.|
-|Type Conversion|Must be explicit (e.g., `int32(y)`)|
-|Integers|Use `int` unless you need a specific bit size|
-|Floats|Prefer `float64` for more precision|
-|Strings|Immutable UTF-8 sequences; made of runes|
-|Unicode/UTF-8|UTF-8 is default encoding; supports global characters|
+| Topic            | Key Takeaway                                          |
+| ---------------- | ----------------------------------------------------- |
+| Comments         | Use `//` or `/* */` for readability                   |
+| Print Statements | Use `fmt` package with `Println`, `Printf`, etc.      |
+| Type Conversion  | Must be explicit (e.g., `int32(y)`)                   |
+| Integers         | Use `int` unless you need a specific bit size         |
+| Floats           | Prefer `float64` for more precision                   |
+| Strings          | Immutable UTF-8 sequences; made of runes              |
+| Unicode/UTF-8    | UTF-8 is default encoding; supports global characters |
 
 ---
 ## 🧠 **Go Programming: Strings, Unicode, and Useful Packages**
